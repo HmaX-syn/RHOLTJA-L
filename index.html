@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RholT Clan | CS 1.6 Jailbreak Gaming</title>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>RholT Clan | CS 1.6 Jailbreak Gaming Community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #22c55e;
-            --primary-glow: rgba(34, 197, 94, 0.4);
-            --bg-dark: #060a0f;
-            --card-bg: rgba(10, 18, 28, 0.85);
-            --border-color: rgba(34, 197, 94, 0.3);
-            --text: #e2e8f0;
+            --primary-dark: #15803d;
+            --primary-glow: rgba(34, 197, 94, 0.35);
+            --bg-dark: #050811;
+            --card-bg: rgba(11, 19, 32, 0.9);
+            --border-color: rgba(34, 197, 94, 0.25);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
             --red: #ef4444;
+            --yellow: #eab308;
+            --blue: #3b82f6;
         }
 
         * {
@@ -25,107 +29,93 @@
 
         body {
             background-color: var(--bg-dark);
-            color: var(--text);
+            color: var(--text-main);
             font-family: 'Inter', sans-serif;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.12) 0%, transparent 60%),
-                radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.15) 0%, transparent 65%),
+                radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
             background-attachment: fixed;
         }
 
         header {
             text-align: center;
-            padding: 30px 20px 10px;
+            padding: 40px 20px 10px;
         }
 
-        .logo-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .logo-box img {
-            width: 150px;
-            height: 150px;
-            object-fit: contain;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 50%;
-            border: 3px solid var(--primary);
-            box-shadow: 0 0 25px var(--primary-glow);
-            padding: 5px;
-            animation: pulse 3s infinite alternate;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 15px rgba(34, 197, 94, 0.3); }
-            100% { box-shadow: 0 0 35px rgba(34, 197, 94, 0.8); }
-        }
-
-        h1 {
+        .header-title {
             font-family: 'Rajdhani', sans-serif;
-            font-size: 2.8rem;
+            font-size: 3.5rem;
+            font-weight: 700;
             color: #fff;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 12px var(--primary-glow);
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px var(--primary-glow);
+            line-height: 1.1;
+        }
+
+        .header-title span {
+            color: var(--primary);
         }
 
         .subtitle {
             color: var(--primary);
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
+            margin-top: 8px;
         }
 
+        /* Nav Menü */
         nav {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
-            margin: 25px 0;
-            padding: 0 10px;
+            margin: 30px 0 20px;
+            padding: 0 15px;
         }
 
         .nav-btn {
-            background: rgba(10, 24, 38, 0.8);
+            background: rgba(15, 23, 42, 0.8);
             border: 1px solid var(--border-color);
             color: #fff;
-            padding: 12px 22px;
+            padding: 12px 24px;
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 700;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
             display: flex;
             align-items: center;
             gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .nav-btn:hover, .nav-btn.active {
-            background: linear-gradient(135deg, #22c55e, #15803d);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: #fff;
             border-color: var(--primary);
-            box-shadow: 0 0 15px var(--primary-glow);
+            box-shadow: 0 0 20px var(--primary-glow);
             transform: translateY(-2px);
         }
 
         main {
-            max-width: 950px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px 40px;
+            padding: 0 20px 50px;
             width: 100%;
             flex: 1;
         }
 
         .tab-content {
             display: none;
-            animation: fadeIn 0.4s ease-in-out;
+            animation: fadeIn 0.3s ease-in-out;
         }
 
         .tab-content.active {
@@ -133,7 +123,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -141,35 +131,71 @@
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 14px;
-            padding: 25px;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            padding: 28px;
+            margin-bottom: 22px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .card h2 {
             font-family: 'Rajdhani', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 10px;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
+        /* Status Grid */
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .status-card {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 16px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .status-card .val {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .status-card .lbl {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* IP Box & Buttons */
         .ip-box {
             background: rgba(0, 0, 0, 0.6);
             border: 2px dashed var(--primary);
-            padding: 15px 25px;
-            border-radius: 8px;
+            padding: 18px 25px;
+            border-radius: 10px;
             font-family: monospace;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: var(--primary);
             text-align: center;
-            margin: 15px 0;
+            margin: 20px 0;
             letter-spacing: 2px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
         }
 
         .btn-group {
@@ -180,10 +206,10 @@
         }
 
         .action-btn {
-            padding: 12px 24px;
-            border-radius: 6px;
+            padding: 14px 28px;
+            border-radius: 8px;
             font-family: 'Rajdhani', sans-serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 700;
             text-decoration: none;
             color: #fff;
@@ -191,34 +217,39 @@
             border: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            transition: 0.3s;
+            gap: 10px;
+            transition: all 0.25s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .btn-ip { background: #16a34a; }
-        .btn-ip:hover { background: #15803d; }
+        .btn-ip { background: var(--primary-dark); }
+        .btn-ip:hover { background: var(--primary); transform: translateY(-2px); }
         .btn-dc { background: #5865F2; }
-        .btn-dc:hover { background: #4752c4; }
+        .btn-dc:hover { background: #4752c4; transform: translateY(-2px); }
 
+        /* Custom Lists */
         .styled-list {
             list-style: none;
         }
 
         .styled-list li {
-            padding: 12px 0;
+            padding: 14px 0;
             border-bottom: 1px solid rgba(255,255,255,0.05);
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            line-height: 1.5;
+            gap: 14px;
+            line-height: 1.6;
+            font-size: 1rem;
         }
 
         .styled-list li i {
             color: var(--primary);
             margin-top: 4px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
+        /* Price Table */
         .price-table {
             width: 100%;
             border-collapse: collapse;
@@ -226,28 +257,31 @@
         }
 
         .price-table th, .price-table td {
-            padding: 14px;
+            padding: 16px;
             text-align: left;
             border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         .price-table th {
-            background: rgba(34, 197, 94, 0.15);
+            background: rgba(34, 197, 94, 0.12);
             color: var(--primary);
             font-family: 'Rajdhani', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .price-tag {
             color: #4ade80;
             font-weight: 700;
             font-family: monospace;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
+        /* Map Grid */
         .map-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
             gap: 12px;
             margin-top: 15px;
         }
@@ -255,27 +289,51 @@
         .map-card {
             background: rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(34, 197, 94, 0.2);
-            padding: 12px;
+            padding: 14px;
             border-radius: 8px;
             text-align: center;
             font-family: monospace;
+            font-size: 1rem;
             color: #4ade80;
-            transition: 0.3s;
+            transition: all 0.25s ease;
         }
 
         .map-card:hover {
             border-color: var(--primary);
-            box-shadow: 0 0 10px var(--primary-glow);
-            transform: scale(1.03);
+            box-shadow: 0 0 15px var(--primary-glow);
+            transform: translateY(-3px);
+            background: rgba(34, 197, 94, 0.1);
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 16px;
+        }
+
+        .faq-item h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            background: rgba(4, 7, 12, 0.95);
+            padding: 25px;
+            background: rgba(3, 6, 12, 0.95);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.9rem;
-            color: #8a99ad;
+            font-size: 0.95rem;
+            color: var(--text-muted);
         }
 
         footer span {
@@ -285,133 +343,153 @@
 
         .notification {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 25px;
+            right: 25px;
             background: var(--primary);
             color: #000;
-            padding: 10px 20px;
-            border-radius: 6px;
+            padding: 12px 24px;
+            border-radius: 8px;
             font-weight: 700;
             display: none;
             z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-box">
-            <!-- RholT Logo -->
-            <img src="rholt.png" alt="RholT Logo" onerror="this.src='https://webailesi.com/upload/cdn/21-08-23-4eR.png'">
-        </div>
-        <h1>RholT Clan</h1>
-        <div class="subtitle">★ RHOLT AİLESİNE HOŞGELDİNİZ ! ★</div>
+        <div class="header-title">RHOLT <span>GAMING</span></div>
+        <div class="subtitle">★ Rholt Ailesine HOŞGELDİNİZ ! ★</div>
     </header>
 
-    <!-- Menü -->
+    <!-- Menü Navigasyon -->
     <nav>
         <button class="nav-btn active" onclick="openTab(event, 'home')"><i class="fa-solid fa-house"></i> Ana Sayfa</button>
-        <button class="nav-btn" onclick="openTab(event, 'recruitment')"><i class="fa-solid fa-users"></i> Klana Alım & Kurallar</button>
+        <button class="nav-btn" onclick="openTab(event, 'rules')"><i class="fa-solid fa-shield-halved"></i> Kurallar & Alım</button>
         <button class="nav-btn" onclick="openTab(event, 'prices')"><i class="fa-solid fa-tags"></i> Ortaklık & Fiyatlar</button>
-        <button class="nav-btn" onclick="openTab(event, 'maps')"><i class="fa-solid fa-map"></i> Sunucu Mapleri</button>
-        <button class="nav-btn" onclick="openTab(event, 'contact')"><i class="fa-solid fa-headset"></i> İletişim</button>
+        <button class="nav-btn" onclick="openTab(event, 'maps')"><i class="fa-solid fa-map-location-dot"></i> Sunucu Mapleri</button>
+        <button class="nav-btn" onclick="openTab(event, 'contact')"><i class="fa-solid fa-headset"></i> İletişim & SSS</button>
     </nav>
 
     <main>
-        <!-- Sekme 1: Ana Sayfa -->
+        <!-- TAB 1: Ana Sayfa -->
         <div id="home" class="tab-content active">
+            <!-- İstatistik Kartları -->
+            <div class="status-grid">
+                <div class="status-card">
+                    <div class="val" style="color:var(--primary);">ONLINE</div>
+                    <div class="lbl">Sunucu Durumu</div>
+                </div>
+                <div class="status-card">
+                    <div class="val">32 / 32</div>
+                    <div class="lbl">Oyuncu Kapasitesi</div>
+                </div>
+                <div class="status-card">
+                    <div class="val">JAILBREAK</div>
+                    <div class="lbl">Oyun Modu</div>
+                </div>
+                <div class="status-card">
+                    <div class="val">%100</div>
+                    <div class="lbl">Uptime / Aktiflik</div>
+                </div>
+            </div>
+
             <div class="card">
-                <h2><i class="fa-solid fa-server"></i> Sunucuya Katıl</h2>
+                <h2><i class="fa-solid fa-server"></i> Sunucu Bağlantı Adresi</h2>
+                <p style="color:var(--text-muted); text-align:center;">Aramıza katılmak ve kesintisiz eğlenceye ortak olmak için hemen bağlan!</p>
                 <div class="ip-box" id="ipText">95.173.173.117</div>
                 <div class="btn-group">
                     <button class="action-btn btn-ip" onclick="copyIP()"><i class="fa-solid fa-copy"></i> IP'yi Kopyala</button>
                     <a href="steam://connect/95.173.173.117" class="action-btn btn-ip"><i class="fa-solid fa-gamepad"></i> Oyuna Gir</a>
-                    <a href="https://discord.gg/29CuCSzfms" target="_blank" class="action-btn btn-dc"><i class="fa-brands fa-discord"></i> Discord</a>
+                    <a href="https://discord.gg/29CuCSzfms" target="_blank" class="action-btn btn-dc"><i class="fa-brands fa-discord"></i> Discord Sunucusu</a>
                 </div>
             </div>
-            
+
             <div class="card">
-                <h2><i class="fa-solid fa-bullhorn"></i> Bilgilendirme</h2>
+                <h2><i class="fa-solid fa-bullhorn"></i> Klan Temel Temel Bilgileri</h2>
                 <ul class="styled-list">
-                    <li><i class="fa-solid fa-shield-halved"></i> <span><strong>Tagımız:</strong> RholTClan @ Nick [?]</span></li>
-                    <li><i class="fa-solid fa-microphone"></i> <span><strong>TeamSpeak3 IP:</strong> rgjb</span></li>
-                    <li><i class="fa-solid fa-calendar-check"></i> <span><strong>Genel Toplantı:</strong> Her Cumartesi 21.00'da katılım zorunludur!</span></li>
+                    <li><i class="fa-solid fa-tag"></i> <span><strong>Resmi Tagımız:</strong> <code>RholTClan @ Nick [?]</code></span></li>
+                    <li><i class="fa-solid fa-headset"></i> <span><strong>TeamSpeak3 Adresi:</strong> <code>rgjb</code></span></li>
+                    <li><i class="fa-solid fa-calendar-days"></i> <span><strong>Genel Toplantı:</strong> Her Cumartesi Saat 21:00'da (Katılım Zorunludur)</span></li>
+                    <li><i class="fa-solid fa-crown"></i> <span><strong>Oyun Tipi:</strong> CS 1.6 Eğlence & İsyan Jailbreak Modu</span></li>
                 </ul>
             </div>
         </div>
 
-        <!-- Sekme 2: Klana Alım & Kurallar -->
-        <div id="recruitment" class="tab-content">
+        <!-- TAB 2: Kurallar & Alım -->
+        <div id="rules" class="tab-content">
             <div class="card">
-                <h2><i class="fa-solid fa-user-plus"></i> Klana Alım & Kurallar</h2>
+                <h2><i class="fa-solid fa-user-check"></i> Klana Alım & Yetkili Kuralları</h2>
                 <ul class="styled-list">
-                    <li><i class="fa-solid fa-check"></i> <span>Yeni Yetki Yazdıran Kişilerin Okuması Gereken Kurallar</span></li>
-                    <li><i class="fa-solid fa-clock"></i> <span>Her Cumartesi 21.00'da Genel Toplantı Vardır Katılım Zorunludur!</span></li>
-                    <li><i class="fa-solid fa-heart"></i> <span>Server Yaşı Veya Yetkisi Her Ne Olursa Olsun Herkese Karşı Saygılı Olmak Zorunludur!</span></li>
-                    <li><i class="fa-brands fa-instagram"></i> <span>Instagram Grubumuza Katılım Zorunludur!</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span>Yeni yetki yazdıran tüm kişilerin aşağıdaki kuralları okuması ve uyması zorunludur.</span></li>
+                    <li><i class="fa-solid fa-clock"></i> <span>Her Cumartesi 21.00'da Genel Toplantı vardır. Katılım zorunludur!</span></li>
+                    <li><i class="fa-solid fa-heart"></i> <span>Server yaşı veya yetkisi her ne olursa olsun herkese karşı saygılı olmak zorunludur!</span></li>
+                    <li><i class="fa-brands fa-instagram"></i> <span>Instagram grubumuza katılım zorunludur!</span></li>
                     <li><i class="fa-solid fa-link"></i> <span>Serverdeykende TS3'de olmak, TS3'deykende Serverda olmak zorunludur!</span></li>
-                    <li><i class="fa-solid fa-ban"></i> <span>Çift TS3 Kesinlikle Yasaktır! (Mikrofon Çıkmış Gibi Bahaneler Kabul Edilmemektedir)</span></li>
-                    <li><i class="fa-solid fa-triangle-exclamation"></i> <span>Başka Teamspeak 3 Adresine Gitmek Yasaktır! (Direkt Ban Sebebi)</span></li>
-                    <li><i class="fa-solid fa-calendar-days"></i> <span>Hergün Düzenlenen Etkinliklerimize Katılım Zorunludur. Katılamayacaksanız önceden bildiriniz!</span></li>
+                    <li><i class="fa-solid fa-ban"></i> <span>Çift TS3 kesinlikle yasaktır! (Mikrofon çıkmış gibi bahaneler kabul edilmez).</span></li>
+                    <li><i class="fa-solid fa-triangle-exclamation"></i> <span>Başka Teamspeak 3 adresine gitmek yasaktır! (Direkt Ban Sebebidir).</span></li>
+                    <li><i class="fa-solid fa-calendar-check"></i> <span>Hergün düzenlenen etkinliklerimize katılım zorunludur. Katılamayacaksanız önceden bildiriniz!</span></li>
                 </ul>
             </div>
 
             <div class="card">
-                <h2><i class="fa-solid fa-gavel"></i> Server Kurallarımız</h2>
+                <h2><i class="fa-solid fa-gavel"></i> General Sunucu Kuralları</h2>
                 <ul class="styled-list">
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Yaşı küçük veya büyük fark etmeksizin saygısızlık yapmak kesinlikle yasaktır!</span></li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Sunucu içerisinde küfür etmek, hakarette bulunmak yasaktır!</span></li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Komutçunun moralini bozmak, küçük düşürmek veya komutla dalga geçmek yasaktır!</span></li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Sunucuda yetki dilenmek yasaktır!</span></li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Sunucuda insanları rahatsız etmek veya trollemek yasaktır!</span></li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Reklam yapmak ve insanları başka TS'ye çekmeye çalışmak kesinlikle yasaktır!</span></li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Sunucu içerisinde spam atmak, tartışma çıkarmak veya kavga etmek yasaktır!</span></li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Irkçılık kesinlikle yasaktır (Türk, Kürt vb.)!</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Yaşı küçük veya büyük, yetkisi yüksek veya düşük fark etmeksizin kimseye saygısızlık yapılamaz.</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Sunucu içerisinde küfür etmek, hakarette bulunmak kesinlikle yasaktır.</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Komutçunun moralini bozmak, küçük düşürmek veya komutla dalga geçmek yasaktır.</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Sunucuda yetki dilenmek ve yetkilileri darlamak yasaktır.</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Sunucuda insanları rahatsız etmek veya trollemek yasaktır.</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Reklam yapmak veya oyuncuları başka TS'ye çekmeye çalışmak süresiz ban sebebidir.</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Spam yapmak, sohbeti kirletmek, tartışma veya kavga çıkarmak yasaktır.</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Irkçılık (Türk, Kürt vb. ayrımı) kesinlikle yasaktır ve affı yoktur!</span></li>
                 </ul>
-                <p style="font-size:0.85rem; color:#8a99ad; margin-top:10px;">★ Not: Lütfen tüm kanalların açıklama kısmındaki kurallarını okuyunuz.</p>
+                <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">★ Not: Lütfen tüm TS3 kanallarının açıklama kısmındaki kurallarını detaylıca okuyunuz.</p>
             </div>
         </div>
 
-        <!-- Sekme 3: Ortaklık & Fiyatlar -->
+        <!-- TAB 3: Ortaklık & Fiyatlar -->
         <div id="prices" class="tab-content">
             <div class="card">
-                <h2><i class="fa-solid fa-handshake"></i> Ortaklık & Yetki Fiyatları</h2>
+                <h2><i class="fa-solid fa-handshake"></i> Ortaklık & Yetki Paket Fiyatları</h2>
+                <p style="color:var(--text-muted); margin-bottom:15px;">Aşağıda 1 Aylık güncel yetki ve ortaklık fiyat tarifemiz yer almaktadır:</p>
                 <table class="price-table">
                     <thead>
                         <tr>
-                            <th>Yetki / Paket Türü</th>
+                            <th>Yetki / Paket Adı</th>
                             <th>Süre</th>
                             <th>Fiyat</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Admin Server Query</td>
+                            <td><strong>Admin Server Query</strong></td>
                             <td>1 Aylık</td>
                             <td class="price-tag">1000 ₺ 💵</td>
                         </tr>
                         <tr>
-                            <td>Jail.RholTClan.COM</td>
+                            <td><strong>Jail.RholTClan.COM</strong></td>
                             <td>1 Aylık</td>
                             <td class="price-tag">800 ₺ 💵</td>
                         </tr>
                         <tr>
-                            <td>RholT Query</td>
+                            <td><strong>RholT Query</strong></td>
                             <td>1 Aylık</td>
                             <td class="price-tag">750 ₺ 💵</td>
                         </tr>
                         <tr>
-                            <td>Master Query</td>
+                            <td><strong>Master Query</strong></td>
                             <td>1 Aylık</td>
                             <td class="price-tag">650 ₺ 💵</td>
                         </tr>
                         <tr>
-                            <td>Server Query</td>
+                            <td><strong>Server Query</strong></td>
                             <td>1 Aylık</td>
                             <td class="price-tag">550 ₺ 💵</td>
                         </tr>
                         <tr>
-                            <td>Operator Query</td>
+                            <td><strong>Operator Query</strong></td>
                             <td>1 Aylık</td>
                             <td class="price-tag">450 ₺ 💵</td>
                         </tr>
@@ -420,10 +498,11 @@
             </div>
         </div>
 
-        <!-- Sekme 4: Mapler -->
+        <!-- TAB 4: Mapler -->
         <div id="maps" class="tab-content">
             <div class="card">
-                <h2><i class="fa-solid fa-map-location-dot"></i> Sunucumuzda Oynanan Mapler</h2>
+                <h2><i class="fa-solid fa-map"></i> Aktif Rotasyondaki Haritalar</h2>
+                <p style="color:var(--text-muted); margin-bottom:15px;">Sunucumuzda sürekli oynanan popüler Jailbreak harita listesi:</p>
                 <div class="map-grid">
                     <div class="map-card">jail_buyukisyan_V1</div>
                     <div class="map-card">jail_gravity</div>
@@ -444,28 +523,44 @@
             </div>
         </div>
 
-        <!-- Sekme 5: İletişim -->
+        <!-- TAB 5: İletişim & SSS -->
         <div id="contact" class="tab-content">
             <div class="card">
-                <h2><i class="fa-solid fa-comments"></i> Resmi İletişim Adresleri</h2>
+                <h2><i class="fa-solid fa-comments"></i> İletişim Kanalları</h2>
                 <ul class="styled-list">
                     <li><i class="fa-brands fa-youtube" style="color:#ff0000;"></i> <span><strong>Youtube Sayfamız:</strong> rholtclan</span></li>
-                    <li><i class="fa-solid fa-headset" style="color:var(--primary);"></i> <span><strong>TeamSpeak3:</strong> rgjb</span></li>
-                    <li><i class="fa-brands fa-discord" style="color:#5865F2;"></i> <span><strong>Discord:</strong> <a href="https://discord.gg/29CuCSzfms" target="_blank" style="color:var(--primary);">discord.gg/29CuCSzfms</a></span></li>
+                    <li><i class="fa-solid fa-headset" style="color:var(--primary);"></i> <span><strong>TeamSpeak3 Adresi:</strong> rgjb</span></li>
+                    <li><i class="fa-brands fa-discord" style="color:#5865F2;"></i> <span><strong>Discord Sunucusu:</strong> <a href="https://discord.gg/29CuCSzfms" target="_blank" style="color:var(--primary);">discord.gg/29CuCSzfms</a></span></li>
                 </ul>
-                <div style="margin-top:20px; padding:12px; background:rgba(239, 68, 68, 0.15); border:1px solid var(--red); border-radius:8px; color:#fca5a5;">
-                    <strong>Not:</strong> Bu iletişim bilgileri dışında RholtJB Gaming adına başka bir resmi iletişim adresimiz yoktur!
+                <div style="margin-top:20px; padding:15px; background:rgba(239, 68, 68, 0.15); border:1px solid var(--red); border-radius:8px; color:#fca5a5;">
+                    <strong>DİKKAT:</strong> Bu iletişim bilgileri dışında RholtJB Gaming adına başka hiçbir resmi iletişim adresimiz veya yetkilimiz yoktur!
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><i class="fa-solid fa-circle-question"></i> Sıkça Sorulan Sorular</h2>
+                <div class="faq-item">
+                    <h3>Soru: Klana nasıl katılırım?</h3>
+                    <p>Cevap: TeamSpeak3 (rgjb) adresimize gelerek veya Discord sunucumuz üzerinden Alım Sorumlularına ulaşarak başvuru yapabilirsiniz.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Soru: Toplantılara katılmazsam ne olur?</h3>
+                    <p>Cevap: Mazeret bildirmeden Cumartesi 21.00 toplantılarına katılmayan kişilerin yetkileri düşürülür veya dondurulur.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Soru: Komutçu nasıl olabilirim?</h3>
+                    <p>Cevap: TS3 sunucumuzda mikrofon kaliteniz ve komut bilginiz üst yönetim tarafından test edildikten sonra komutçu yetkisi verilmektedir.</p>
                 </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>RholT Jailbreak Clan © 2026 | Tüm Hakları Saklıdır.</p>
-        <p style="margin-top: 5px;">Hazırlayan: <span>HmaX</span></p>
+        <p>RholT Jailbreak Gaming © 2026 | Tüm Hakları Saklıdır.</p>
+        <p style="margin-top: 6px;">Hazırlayan & Tasarım: <span>HmaX</span></p>
     </footer>
 
-    <div class="notification" id="copyNotification">IP adresi panoya kopyalandı!</div>
+    <div class="notification" id="copyNotification">IP Adresi Başarıyla Kopyalandı!</div>
 
     <script>
         function openTab(evt, tabId) {
@@ -486,7 +581,7 @@
                 notification.style.display = 'block';
                 setTimeout(() => {
                     notification.style.display = 'none';
-                }, 2000);
+                }, 2200);
             });
         }
     </script>
