@@ -42,16 +42,21 @@
         }
 
         .logo-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-bottom: 15px;
         }
 
         .logo-box img {
             width: 150px;
             height: 150px;
-            object-fit: cover;
+            object-fit: contain;
+            background: rgba(0, 0, 0, 0.6);
             border-radius: 50%;
             border: 3px solid var(--primary);
             box-shadow: 0 0 25px var(--primary-glow);
+            padding: 5px;
             animation: pulse 3s infinite alternate;
         }
 
@@ -296,8 +301,8 @@
 
     <header>
         <div class="logo-box">
-            <!-- Normal RHOLT Logosu -->
-            <img src="rholt.png" alt="RholT Logo" onerror="this.src='https://i.hizliresim.com/a8hmxrn.png'">
+            <!-- RholT Logo -->
+            <img src="rholt.png" alt="RholT Logo" onerror="this.src='https://webailesi.com/upload/cdn/21-08-23-4eR.png'">
         </div>
         <h1>RholT Clan</h1>
         <div class="subtitle">★ RHOLT AİLESİNE HOŞGELDİNİZ ! ★</div>
