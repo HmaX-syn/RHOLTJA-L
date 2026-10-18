@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #00f0ff;
-            --secondary: #0077ff;
-            --bg-dark: #070a14;
-            --card-bg: rgba(13, 20, 38, 0.85);
-            --border-color: rgba(0, 240, 255, 0.25);
+            --primary: #22c55e;
+            --primary-glow: rgba(34, 197, 94, 0.4);
+            --bg-dark: #060a0f;
+            --card-bg: rgba(10, 18, 28, 0.85);
+            --border-color: rgba(34, 197, 94, 0.3);
             --text: #e2e8f0;
-            --green: #22c55e;
             --red: #ef4444;
         }
 
@@ -32,8 +31,8 @@
             display: flex;
             flex-direction: column;
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.12) 0%, transparent 60%),
-                radial-gradient(circle at 100% 100%, rgba(0, 119, 255, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
             background-attachment: fixed;
         }
 
@@ -52,13 +51,13 @@
             object-fit: cover;
             border-radius: 50%;
             border: 3px solid var(--primary);
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
+            box-shadow: 0 0 25px var(--primary-glow);
             animation: pulse 3s infinite alternate;
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 15px rgba(0, 240, 255, 0.3); }
-            100% { box-shadow: 0 0 35px rgba(0, 240, 255, 0.8); }
+            0% { box-shadow: 0 0 15px rgba(34, 197, 94, 0.3); }
+            100% { box-shadow: 0 0 35px rgba(34, 197, 94, 0.8); }
         }
 
         h1 {
@@ -67,7 +66,7 @@
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+            text-shadow: 0 0 12px var(--primary-glow);
         }
 
         .subtitle {
@@ -78,7 +77,6 @@
             text-transform: uppercase;
         }
 
-        /* Navigation Menu */
         nav {
             display: flex;
             justify-content: center;
@@ -89,7 +87,7 @@
         }
 
         .nav-btn {
-            background: rgba(16, 26, 50, 0.8);
+            background: rgba(10, 24, 38, 0.8);
             border: 1px solid var(--border-color);
             color: #fff;
             padding: 12px 22px;
@@ -105,10 +103,10 @@
         }
 
         .nav-btn:hover, .nav-btn.active {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #070a14;
+            background: linear-gradient(135deg, #22c55e, #15803d);
+            color: #fff;
             border-color: var(--primary);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+            box-shadow: 0 0 15px var(--primary-glow);
             transform: translateY(-2px);
         }
 
@@ -141,7 +139,7 @@
             padding: 25px;
             margin-bottom: 20px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
         }
 
         .card h2 {
@@ -156,25 +154,30 @@
             padding-bottom: 10px;
         }
 
-        .banner-img {
-            width: 100%;
-            max-height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
+        .banner-container {
+            text-align: center;
             margin-bottom: 20px;
         }
 
+        .banner-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
         .ip-box {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             border: 2px dashed var(--primary);
             padding: 15px 25px;
             border-radius: 8px;
             font-family: monospace;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: var(--primary);
             text-align: center;
             margin: 15px 0;
+            letter-spacing: 2px;
         }
 
         .btn-group {
@@ -200,31 +203,30 @@
             transition: 0.3s;
         }
 
-        .btn-ip { background: var(--secondary); }
-        .btn-ip:hover { background: #0055cc; }
+        .btn-ip { background: #16a34a; }
+        .btn-ip:hover { background: #15803d; }
         .btn-dc { background: #5865F2; }
         .btn-dc:hover { background: #4752c4; }
 
-        /* List Styling */
         .styled-list {
             list-style: none;
         }
 
         .styled-list li {
-            padding: 10px 0;
+            padding: 12px 0;
             border-bottom: 1px solid rgba(255,255,255,0.05);
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
             line-height: 1.5;
         }
 
         .styled-list li i {
             color: var(--primary);
             margin-top: 4px;
+            font-size: 1.1rem;
         }
 
-        /* Price List */
         .price-table {
             width: 100%;
             border-collapse: collapse;
@@ -238,20 +240,19 @@
         }
 
         .price-table th {
-            background: rgba(0, 240, 255, 0.1);
+            background: rgba(34, 197, 94, 0.15);
             color: var(--primary);
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.1rem;
         }
 
         .price-tag {
-            color: var(--green);
+            color: #4ade80;
             font-weight: 700;
             font-family: monospace;
             font-size: 1.1rem;
         }
 
-        /* Map Grid */
         .map-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -260,25 +261,26 @@
         }
 
         .map-card {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(34, 197, 94, 0.2);
             padding: 12px;
             border-radius: 8px;
             text-align: center;
             font-family: monospace;
-            color: var(--primary);
+            color: #4ade80;
             transition: 0.3s;
         }
 
         .map-card:hover {
             border-color: var(--primary);
+            box-shadow: 0 0 10px var(--primary-glow);
             transform: scale(1.03);
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            background: rgba(4, 7, 15, 0.95);
+            background: rgba(4, 7, 12, 0.95);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 0.9rem;
             color: #8a99ad;
@@ -310,23 +312,22 @@
             <img src="rholt.png" alt="RholT Logo" onerror="this.src='https://i.hizliresim.com/a8hmxrn.png'">
         </div>
         <h1>RholT Clan</h1>
-        <div class="subtitle">★ Rholt Ailesine HOŞGELDİNİZ ! ★</div>
+        <div class="subtitle">★ RHOLT AİLESİNE HOŞGELDİNİZ ! ★</div>
     </header>
 
-    <!-- Navigation -->
+    <!-- Menü -->
     <nav>
-        <button class="nav-btn active" onclick="openTab('home')"><i class="fa-solid fa-house"></i> Ana Sayfa</button>
-        <button class="nav-btn" onclick="openTab('recruitment')"><i class="fa-solid fa-users"></i> Klana Alım & Kurallar</button>
-        <button class="nav-btn" onclick="openTab('prices')"><i class="fa-solid fa-tags"></i> Ortaklık & Fiyatlar</button>
-        <button class="nav-btn" onclick="openTab('maps')"><i class="fa-solid fa-map"></i> Sunucu Mapleri</button>
-        <button class="nav-btn" onclick="openTab('contact')"><i class="fa-solid fa-headset"></i> İletişim</button>
+        <button class="nav-btn active" onclick="openTab(event, 'home')"><i class="fa-solid fa-house"></i> Ana Sayfa</button>
+        <button class="nav-btn" onclick="openTab(event, 'recruitment')"><i class="fa-solid fa-users"></i> Klana Alım & Kurallar</button>
+        <button class="nav-btn" onclick="openTab(event, 'prices')"><i class="fa-solid fa-tags"></i> Ortaklık & Fiyatlar</button>
+        <button class="nav-btn" onclick="openTab(event, 'maps')"><i class="fa-solid fa-map"></i> Sunucu Mapleri</button>
+        <button class="nav-btn" onclick="openTab(event, 'contact')"><i class="fa-solid fa-headset"></i> İletişim</button>
     </nav>
 
     <main>
-        <!-- Tab 1: Ana Sayfa -->
+        <!-- Sekme 1: Ana Sayfa -->
         <div id="home" class="tab-content active">
             <div class="card">
-                <img src="https://i.hizliresim.com/a8hmxrn.png" class="banner-img" alt="RholT Clan Banner">
                 <h2><i class="fa-solid fa-server"></i> Sunucuya Katıl</h2>
                 <div class="ip-box" id="ipText">95.173.173.117</div>
                 <div class="btn-group">
@@ -337,52 +338,59 @@
             </div>
             
             <div class="card">
-                <h2><i class="fa-solid fa-bullhorn"></i> Hızlı Bilgilendirme</h2>
+                <h2><i class="fa-solid fa-bullhorn"></i> Bilgilendirme</h2>
                 <ul class="styled-list">
-                    <li><i class="fa-solid fa-shield-halved"></i> <strong>Tagımız:</strong> RholTClan @ Nick [?]</li>
-                    <li><i class="fa-solid fa-microphone"></i> <strong>TeamSpeak3 IP:</strong> rgjb</li>
-                    <li><i class="fa-solid fa-calendar-check"></i> <strong>Genel Toplantı:</strong> Her Cumartesi 21.00'da katılım zorunludur!</li>
+                    <li><i class="fa-solid fa-shield-halved"></i> <span><strong>Tagımız:</strong> RholTClan @ Nick [?]</span></li>
+                    <li><i class="fa-solid fa-microphone"></i> <span><strong>TeamSpeak3 IP:</strong> rgjb</span></li>
+                    <li><i class="fa-solid fa-calendar-check"></i> <span><strong>Genel Toplantı:</strong> Her Cumartesi 21.00'da katılım zorunludur!</span></li>
                 </ul>
             </div>
         </div>
 
-        <!-- Tab 2: Klana Alım & Kurallar -->
+        <!-- Sekme 2: Klana Alım & Kurallar -->
         <div id="recruitment" class="tab-content">
             <div class="card">
-                <h2><i class="fa-solid fa-user-plus"></i> Klana Alım & Yetkili Kuralları</h2>
+                <div class="banner-container">
+                    <!-- SERVER KURALLARI RESMİ -->
+                    <img src="https://i.hizliresim.com/iz8uglr.png" class="banner-img" alt="Server Kuralları Banner">
+                </div>
+                <h2><i class="fa-solid fa-user-plus"></i> Klana Alım & Kurallar</h2>
                 <ul class="styled-list">
-                    <li><i class="fa-solid fa-check-double"></i> Yeni Yetki Yazdıran Kişilerin Kuralları Okuması Gereklidir.</li>
-                    <li><i class="fa-solid fa-clock"></i> Her Cumartesi 21.00'da Genel Toplantı Vardır Katılım Zorunludur!</li>
-                    <li><i class="fa-solid fa-heart"></i> Server Yaşı Veya Yetkisi Her Ne Olursa Olsun Herkese Karşı Saygılı Olmak Zorunludur!</li>
-                    <li><i class="fa-brands fa-instagram"></i> Instagram Grubumuza Katılım Zorunludur!</li>
-                    <li><i class="fa-solid fa-link"></i> Serverdeykende TS3'de olmak, TS3'deykende Serverda olmak zorunludur!</li>
-                    <li><i class="fa-solid fa-ban"></i> Çift TS3 Kesinlikle Yasaktır! (Mikrofon Çıkmış Gibi Bahaneler Kabul Edilmemektedir)</li>
-                    <li><i class="fa-solid fa-triangle-exclamation"></i> Başka Teamspeak 3 Adresine Gitmek Yasaktır! (Direkt Ban Sebebi)</li>
-                    <li><i class="fa-solid fa-calendar-days"></i> Her gün Düzenlenen Etkinliklerimize Katılım Zorunludur. Katılamayacaksanız önceden bildiriniz!</li>
+                    <li><i class="fa-solid fa-check"></i> <span>Yeni Yetki Yazdıran Kişilerin Okuması Gereken Kurallar</span></li>
+                    <li><i class="fa-solid fa-clock"></i> <span>Her Cumartesi 21.00'da Genel Toplantı Vardır Katılım Zorunludur!</span></li>
+                    <li><i class="fa-solid fa-heart"></i> <span>Server Yaşı Veya Yetkisi Her Ne Olursa Olsun Herkese Karşı Saygılı Olmak Zorunludur!</span></li>
+                    <li><i class="fa-brands fa-instagram"></i> <span>Instagram Grubumuza Katılım Zorunludur!</span></li>
+                    <li><i class="fa-solid fa-link"></i> <span>Serverdeykende TS3'de olmak, TS3'deykende Serverda olmak zorunludur!</span></li>
+                    <li><i class="fa-solid fa-ban"></i> <span>Çift TS3 Kesinlikle Yasaktır! (Mikrofon Çıkmış Gibi Bahaneler Kabul Edilmemektedir)</span></li>
+                    <li><i class="fa-solid fa-triangle-exclamation"></i> <span>Başka Teamspeak 3 Adresine Gitmek Yasaktır! (Direkt Ban Sebebi)</span></li>
+                    <li><i class="fa-solid fa-calendar-days"></i> <span>Hergün Düzenlenen Etkinliklerimize Katılım Zorunludur. Katılamayacaksanız önceden bildiriniz!</span></li>
                 </ul>
             </div>
 
             <div class="card">
                 <h2><i class="fa-solid fa-gavel"></i> Server Kurallarımız</h2>
                 <ul class="styled-list">
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> Yaşı küçük veya büyük fark etmeksizin saygısızlık yapmak kesinlikle yasaktır!</li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> Sunucu içerisinde küfür etmek, hakarette bulunmak yasaktır!</li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> Komutçunun moralini bozmak, küçük düşürmek veya komutla dalga geçmek yasaktır!</li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> Sunucuda yetki dilenmek yasaktır!</li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> Sunucuda insanları rahatsız etmek veya trollemek yasaktır!</li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> Reklam yapmak ve insanları başka TS'ye çekmeye çalışmak kesinlikle yasaktır!</li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> Sunucu içerisinde spam atmak, tartışma çıkarmak veya kavga etmek yasaktır!</li>
-                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> Irkçılık kesinlikle yasaktır!</li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Yaşı küçük veya büyük fark etmeksizin saygısızlık yapmak kesinlikle yasaktır!</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Sunucu içerisinde küfür etmek, hakarette bulunmak yasaktır!</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Komutçunun moralini bozmak, küçük düşürmek veya komutla dalga geçmek yasaktır!</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Sunucuda yetki dilenmek yasaktır!</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Sunucuda insanları rahatsız etmek veya trollemek yasaktır!</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Reklam yapmak ve insanları başka TS'ye çekmeye çalışmak kesinlikle yasaktır!</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Sunucu içerisinde spam atmak, tartışma çıkarmak veya kavga etmek yasaktır!</span></li>
+                    <li><i class="fa-solid fa-xmark" style="color:var(--red);"></i> <span>Irkçılık kesinlikle yasaktır (Türk, Kürt vb.)!</span></li>
                 </ul>
                 <p style="font-size:0.85rem; color:#8a99ad; margin-top:10px;">★ Not: Lütfen tüm kanalların açıklama kısmındaki kurallarını okuyunuz.</p>
             </div>
         </div>
 
-        <!-- Tab 3: Ortaklık & Fiyatlar -->
+        <!-- Sekme 3: Ortaklık & Fiyatlar -->
         <div id="prices" class="tab-content">
             <div class="card">
+                <div class="banner-container">
+                    <!-- ORTAKLIK FİYATLARI RESMİ -->
+                    <img src="https://i.hizliresim.com/a8hmxrn.png" class="banner-img" alt="Ortaklık Fiyatları Banner">
+                </div>
                 <h2><i class="fa-solid fa-handshake"></i> Ortaklık & Yetki Fiyatları</h2>
-                <p style="margin-bottom:15px; color:#a0aec0;">1 Aylık Yetki ve Ortaklık Paket Ücretleri:</p>
                 <table class="price-table">
                     <thead>
                         <tr>
@@ -427,11 +435,10 @@
             </div>
         </div>
 
-        <!-- Tab 4: Mapler -->
+        <!-- Sekme 4: Mapler -->
         <div id="maps" class="tab-content">
             <div class="card">
                 <h2><i class="fa-solid fa-map-location-dot"></i> Sunucumuzda Oynanan Mapler</h2>
-                <img src="https://i.hizliresim.com/iz8uglr.png" class="banner-img" alt="Map Banner">
                 <div class="map-grid">
                     <div class="map-card">jail_buyukisyan_V1</div>
                     <div class="map-card">jail_gravity</div>
@@ -452,15 +459,18 @@
             </div>
         </div>
 
-        <!-- Tab 5: İletişim -->
+        <!-- Sekme 5: İletişim -->
         <div id="contact" class="tab-content">
             <div class="card">
+                <div class="banner-container">
+                    <!-- İLETİŞİM BİLGİLERİ RESMİ -->
+                    <img src="https://i.hizliresim.com/deiszve.png" class="banner-img" alt="İletişim Bilgileri Banner">
+                </div>
                 <h2><i class="fa-solid fa-comments"></i> Resmi İletişim Adresleri</h2>
-                <img src="https://i.hizliresim.com/deiszve.png" class="banner-img" alt="İletişim Banner">
                 <ul class="styled-list">
-                    <li><i class="fa-brands fa-youtube" style="color:#ff0000;"></i> <strong>Youtube Sayfamız:</strong> rholtclan</li>
-                    <li><i class="fa-solid fa-headset" style="color:var(--primary);"></i> <strong>TeamSpeak3:</strong> rgjb</li>
-                    <li><i class="fa-brands fa-discord" style="color:#5865F2;"></i> <strong>Discord:</strong> <a href="https://discord.gg/29CuCSzfms" target="_blank" style="color:var(--primary);">discord.gg/29CuCSzfms</a></li>
+                    <li><i class="fa-brands fa-youtube" style="color:#ff0000;"></i> <span><strong>Youtube Sayfamız:</strong> rholtclan</span></li>
+                    <li><i class="fa-solid fa-headset" style="color:var(--primary);"></i> <span><strong>TeamSpeak3:</strong> rgjb</span></li>
+                    <li><i class="fa-brands fa-discord" style="color:#5865F2;"></i> <span><strong>Discord:</strong> <a href="https://discord.gg/29CuCSzfms" target="_blank" style="color:var(--primary);">discord.gg/29CuCSzfms</a></span></li>
                 </ul>
                 <div style="margin-top:20px; padding:12px; background:rgba(239, 68, 68, 0.15); border:1px solid var(--red); border-radius:8px; color:#fca5a5;">
                     <strong>Not:</strong> Bu iletişim bilgileri dışında RholtJB Gaming adına başka bir resmi iletişim adresimiz yoktur!
@@ -477,7 +487,7 @@
     <div class="notification" id="copyNotification">IP adresi panoya kopyalandı!</div>
 
     <script>
-        function openTab(tabId) {
+        function openTab(evt, tabId) {
             const contents = document.querySelectorAll('.tab-content');
             const buttons = document.querySelectorAll('.nav-btn');
 
@@ -485,7 +495,7 @@
             buttons.forEach(btn => btn.classList.remove('active'));
 
             document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
+            evt.currentTarget.classList.add('active');
         }
 
         function copyIP() {
